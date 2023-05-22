@@ -5,6 +5,7 @@ import Exercises from './Exercises';
 
 const SearchExercises = () => {
   const [search, setSearch] = useState('');
+  const [exercises, setExercises] = useState([]);
 
   const handleSearch = async () => {
     if (search) {
@@ -12,7 +13,15 @@ const SearchExercises = () => {
         'https://exercisedb.p.rapidapi.com/exercises',
         exerciseOptions
       );
-      console.log(exercisesData);
+      const searchedExercises = exercisesData.filter(
+        (exercise) =>
+          exercise.name.toLowerCase().includes(search) ||
+          exercise.target.toLowerCase().includes(search) ||
+          exercise.equipment.toLowerCase().includes(search) ||
+          exercise.name.toLowerCase().includes(search)
+      );
+      setSearch('');
+      setExercises(searchedExercises);
     }
   };
 
