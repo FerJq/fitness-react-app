@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Stack, Typography } from '@mui/material';
-import Logo from '../assets/images/Logo1.png';
+import Logo from '../assets/images/Logo-1.png';
 const Footer = () => {
   return (
     <Box mt="80x" bgcolor="#fff3f4">
